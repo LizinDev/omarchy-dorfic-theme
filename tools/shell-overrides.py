@@ -66,6 +66,13 @@ GLOSS_BAR = {
 }
 
 
+HEADER = [
+    '# A section override REPLACES the whole section, so every generated key is',
+    '# restated; hex values are frozen copies of colors.toml - re-run the tool',
+    '# after any palette change.',
+]
+
+
 def palette():
     keys = {}
     for line in (THEME / 'colors.toml').read_text().splitlines():
@@ -98,9 +105,14 @@ def main():
         sys.exit(f'apply the theme first: current is {current!r}, this is {slug!r}')
     colors = palette()
     generated = sections((STATE / 'theme/shell.toml').read_text())
+    header_lines = set(HEADER)
     for section, changes in OVERRIDES.items():
         lines, done = [], set()
         for line in generated[section]:
+            # Once the theme ships its overrides, the live section already
+            # carries this tool's header; drop it so reruns do not stack it.
+            if line in header_lines or line.startswith(f'# {slug} override for ['):
+                continue
             m = re.match(r'^(\s*)([a-z-]+)(\s*=\s*)(.*)$', line)
             if m and m.group(2) in changes:
                 value = changes[m.group(2)]
@@ -119,12 +131,7 @@ def main():
                 if isinstance(value, str):
                     value = value.format(**colors)
                 lines.append(f'{key:<{width}} = {literal(value)}')
-        header = [
-            f'# {slug} override for [{section}], written by tools/shell-overrides.py.',
-            '# A section override REPLACES the whole section, so every generated key is',
-            '# restated; hex values are frozen copies of colors.toml - re-run the tool',
-            '# after any palette change.',
-        ]
+        header = [f'# {slug} override for [{section}], written by tools/shell-overrides.py.'] + HEADER
         (THEME / f'shell.{section}.toml').write_text('\n'.join(header + lines) + '\n')
         print(f'shell.{section}.toml')
 

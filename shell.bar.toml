@@ -2,10 +2,6 @@
 # A section override REPLACES the whole section, so every generated key is
 # restated; hex values are frozen copies of colors.toml - re-run the tool
 # after any palette change.
-# dorfic override for [bar], written by tools/shell-overrides.py.
-# A section override REPLACES the whole section, so every generated key is
-# restated; hex values are frozen copies of colors.toml - re-run the tool
-# after any palette change.
 # Alpha companions (where present) range from 0 (invisible) to 1 (opaque).
 background       = "#8f3000"
 background-alpha = 0.0

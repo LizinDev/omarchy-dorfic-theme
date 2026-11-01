@@ -49,18 +49,26 @@ OVERRIDES = {
     'lock': {'background-alpha': 0.6, 'border': '#ffffff'},
 }
 
-# Translucent orange glass capsules with white text and a bright highlight band.
+# Smoked orange glass capsules: a thin tinted body the blurred wallpaper shows
+# through (dark enough at the bottom to keep the white text legible), a glare
+# on the top half, a white rim, a specular hairline on top and a gold one below.
 GLOSS_BAR = {
     'enabled': 'true',
-    'fill-top': '#ff8a2a',
-    'fill': '#e2600a',
-    'fill-bottom': '#ffb066',
-    'fill-alpha': 0.62,
-    'rim': '#ffd2a6',
+    'fill-top': '#ffd9b0',
+    'fill': '#d9560a',
+    'fill-bottom': '#b84000',
+    'fill-alpha': 0.18,
+    'rim': '#ffffff',
+    'rim-alpha': 0.45,
     'shadow': '#3a1000',
-    'shadow-alpha': 0.25,
-    'shine-alpha': 0.8,
-    'glow-alpha': 0.4,
+    'shadow-alpha': 0.1,
+    'shadow-offset': 1,
+    'shine-style': 'glare',
+    'shine-alpha': 0.3,
+    'glow-alpha': 0,
+    'edge-light-alpha': 0.9,
+    'edge-glow': '{accent}',
+    'edge-glow-alpha': 0.7,
     'inset': 4,
     'padding': 8,
 }
@@ -139,10 +147,11 @@ def main():
         f'# {slug} [gloss-bar], written by tools/shell-overrides.py. Read by the',
         '# Gloss Bar plugin; Omarchy itself ignores this section.',
     ]
+    pad = max(len(k) for k in GLOSS_BAR)
     for key, value in GLOSS_BAR.items():
         if isinstance(value, str):
             value = value.format(**colors)
-        lines.append(f'{key:<12} = {literal(value)}')
+        lines.append(f'{key:<{pad}} = {literal(value)}')
     (THEME / 'shell.gloss-bar.toml').write_text('\n'.join(lines) + '\n')
     print('shell.gloss-bar.toml')
 

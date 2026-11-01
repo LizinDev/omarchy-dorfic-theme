@@ -60,7 +60,15 @@ hl.config({
 -- Glass behind the shell's translucent cards. ignore_alpha keeps the blur to
 -- the drawn pixels so the rounded bar capsules don't frost a full-width strip.
 hl.layer_rule({
-  match = { namespace = "^(omarchy-bar|omarchy-gloss-bar|omarchy-menu|omarchy-notifications|omarchy-osd|omarchy-clipboard|omarchy-emojis|omarchy-polkit|omarchy-reminders)$" },
+  match = { namespace = "^(omarchy-bar|omarchy-menu|omarchy-notifications|omarchy-osd|omarchy-clipboard|omarchy-emojis|omarchy-polkit|omarchy-reminders)$" },
   blur = true,
   ignore_alpha = 0.2,
+})
+
+-- The Gloss Bar capsules are mostly see-through glass, so blur everything
+-- they draw: the threshold only has to drop the fully clear pixels around them.
+hl.layer_rule({
+  match = { namespace = "omarchy-gloss-bar" },
+  blur = true,
+  ignore_alpha = 0.01,
 })

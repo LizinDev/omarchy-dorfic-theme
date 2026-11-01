@@ -45,6 +45,7 @@ orange. Passes the Omarchy palette validator in `--strict`.
 | `kitty.conf`, `alacritty.toml`, `ghostty.conf` | the stock templates rendered with this palette, plus 0.8 background opacity |
 | `shell.*.toml` | glass cards (menu, launcher, popups, notifications, lock), white selected pill, clear 34 px bar with white text |
 | `shell.gloss-bar.toml` | translucent orange capsules for the Gloss Bar plugin |
+| `icons.theme` | `Yaru` |
 | `backgrounds/` | six backgrounds drawn from code (bubbles, blades, hexcells, panels, ribbons, capsule) |
 | `fastfetch.txt` | the fastfetch logo: glossy orbs and a glass bubble in truecolor half-blocks |
 

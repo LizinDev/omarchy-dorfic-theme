@@ -1,20 +1,18 @@
 # dorfic [gloss-bar], written by tools/shell-overrides.py. Read by the
 # Gloss Bar plugin; Omarchy itself ignores this section.
 enabled          = "true"
-fill-top         = "#ffd9b0"
-fill             = "#d9560a"
-fill-bottom      = "#b84000"
-fill-alpha       = 0.18
+fill-top         = "#ffffff"
+fill             = "#c24a05"
+fill-bottom      = "#8f3000"
+fill-alpha       = 0.08
 rim              = "#ffffff"
-rim-alpha        = 0.45
-shadow           = "#3a1000"
-shadow-alpha     = 0.1
-shadow-offset    = 1
+rim-alpha        = 0.55
+shadow-alpha     = 0
 shine-style      = "glare"
-shine-alpha      = 0.3
+shine-alpha      = 0.1
 glow-alpha       = 0
-edge-light-alpha = 0.9
+edge-light-alpha = 0.95
 edge-glow        = "#ffd23f"
-edge-glow-alpha  = 0.7
+edge-glow-alpha  = 0.6
 inset            = 4
 padding          = 8

@@ -49,26 +49,24 @@ OVERRIDES = {
     'lock': {'background-alpha': 0.6, 'border': '#ffffff'},
 }
 
-# Smoked orange glass capsules: a thin tinted body the blurred wallpaper shows
-# through (dark enough at the bottom to keep the white text legible), a glare
-# on the top half, a white rim, a specular hairline on top and a gold one below.
+# Clear glass capsules: almost no tint, so the blur does the work; the shape
+# comes from a crisp white rim, a specular hairline on top and a gold one below.
+# No drop shadow and only a whisper of glare: both read as plastic.
 GLOSS_BAR = {
     'enabled': 'true',
-    'fill-top': '#ffd9b0',
-    'fill': '#d9560a',
-    'fill-bottom': '#b84000',
-    'fill-alpha': 0.18,
+    'fill-top': '#ffffff',
+    'fill': '#c24a05',
+    'fill-bottom': '#8f3000',
+    'fill-alpha': 0.08,
     'rim': '#ffffff',
-    'rim-alpha': 0.45,
-    'shadow': '#3a1000',
-    'shadow-alpha': 0.1,
-    'shadow-offset': 1,
+    'rim-alpha': 0.55,
+    'shadow-alpha': 0,
     'shine-style': 'glare',
-    'shine-alpha': 0.3,
+    'shine-alpha': 0.1,
     'glow-alpha': 0,
-    'edge-light-alpha': 0.9,
+    'edge-light-alpha': 0.95,
     'edge-glow': '{accent}',
-    'edge-glow-alpha': 0.7,
+    'edge-glow-alpha': 0.6,
     'inset': 4,
     'padding': 8,
 }

@@ -1,0 +1,14 @@
+# dorfic override for [notifications], written by tools/shell-overrides.py.
+# A section override REPLACES the whole section, so every generated key is
+# restated; hex values are frozen copies of colors.toml - re-run the tool
+# after any palette change.
+background       = "#8f3000"
+background-alpha = 0.78
+text             = "#fff3e6"
+# Conventionally matches the Hyprland active-window border. Border accepts
+# either a solid color or the full active-border gradient.
+border           = "hyprland.active-border"
+border-alpha     = 1.0
+# border-width     = 2
+countdown        = "#ffd23f"
+border-width     = 2

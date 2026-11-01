@@ -1,0 +1,21 @@
+# dorfic override for [lock], written by tools/shell-overrides.py.
+# A section override REPLACES the whole section, so every generated key is
+# restated; hex values are frozen copies of colors.toml - re-run the tool
+# after any palette change.
+# Lock screen password input. background/background-alpha control the
+# centered input field card; border/border-active/border-error cycle
+# through idle, typing/authenticating, and wrong-password states.
+# border-alpha applies to all three border states (they are mutually
+# exclusive in time).
+background       = "#8f3000"
+background-alpha = 0.6
+text             = "#fff3e6"
+placeholder      = "#d9b198"
+text-error       = "#ffb8ae"
+border           = "#ffffff"
+border-active    = "hyprland.active-border"
+border-error     = "#ffb8ae"
+border-alpha     = 1.0
+# selection is the text-selection tint inside the input field.
+selection        = "#ffd23f"
+selection-alpha  = 0.45

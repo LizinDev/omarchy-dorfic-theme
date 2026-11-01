@@ -1,0 +1,51 @@
+[colors.primary]
+background = "#8f3000"
+foreground = "#fff3e6"
+
+[colors.cursor]
+text = "#8f3000"
+cursor = "#ffffff"
+
+[colors.vi_mode_cursor]
+text = "#8f3000"
+cursor = "#ffffff"
+
+[colors.search.matches]
+foreground = "#8f3000"
+background = "#ffe27a"
+
+[colors.search.focused_match]
+foreground = "#8f3000"
+background = "#ffb8ae"
+
+[colors.footer_bar]
+foreground = "#8f3000"
+background = "#fff3e6"
+
+[colors.selection]
+text = "#ffffff"
+background = "#c4520c"
+
+[colors.normal]
+black = "#8f3000"
+red = "#ffb8ae"
+green = "#c9f28f"
+yellow = "#ffe27a"
+blue = "#bcd2ff"
+magenta = "#ffbce6"
+cyan = "#9ff0ea"
+white = "#fff3e6"
+
+[colors.bright]
+black = "#f2a066"
+red = "#ffd0c9"
+green = "#e1fbbd"
+yellow = "#fff0b3"
+blue = "#dde8ff"
+magenta = "#ffdcf2"
+cyan = "#cdfaf6"
+white = "#ffffff"
+
+# DORFic glass
+[window]
+opacity = 0.8

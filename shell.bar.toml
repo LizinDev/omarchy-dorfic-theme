@@ -1,0 +1,16 @@
+# dorfic override for [bar], written by tools/shell-overrides.py.
+# A section override REPLACES the whole section, so every generated key is
+# restated; hex values are frozen copies of colors.toml - re-run the tool
+# after any palette change.
+# Alpha companions (where present) range from 0 (invisible) to 1 (opaque).
+background       = "#8f3000"
+background-alpha = 0.45
+text             = "#fff3e6"
+# Modules calling attention to themselves (recording, voxtype, alerts, updates)
+active           = "#ffb8ae"
+# Cross-axis size at font base-size 12. size-horizontal is the height of
+# top/bottom bars; size-vertical is the width of left/right bars. With
+# scale-with-font enabled, these grow/shrink with [font] base-size.
+scale-with-font  = true
+size-horizontal  = 34
+size-vertical    = 28

@@ -1,0 +1,15 @@
+# dorfic override for [popups], written by tools/shell-overrides.py.
+# A section override REPLACES the whole section, so every generated key is
+# restated; hex values are frozen copies of colors.toml - re-run the tool
+# after any palette change.
+# Shared by every bar flyout (dropdowns, OSD, popup cards).
+# Border accepts either a solid color or a Hyprland-style gradient. Border
+# widths accept one CSS-style scalar/list: N, "Y X", "T X B", or "T R B L";
+# individual border-width-top/right/bottom/left keys override the list.
+background       = "#8f3000"
+background-alpha = 0.78
+text             = "#fff3e6"
+border           = "hyprland.active-border"
+border-alpha     = 1.0
+# border-width     = 2
+border-width     = 2

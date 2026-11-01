@@ -1,0 +1,20 @@
+# dorfic override for [launcher], written by tools/shell-overrides.py.
+# A section override REPLACES the whole section, so every generated key is
+# restated; hex values are frozen copies of colors.toml - re-run the tool
+# after any palette change.
+# Same six tokens as [menu], applied to the launcher overlay. Alpha
+# companions go from 0 (invisible) to 1 (opaque). scrim is the full-screen
+# dim layer behind the card; background is the card itself. Defaults
+# mirror [menu] with the card at 0.95 to preserve the legacy translucency.
+background                = "#8f3000"
+background-alpha          = 0.72
+text                      = "#fff3e6"
+border                    = "hyprland.active-border"
+border-alpha              = 1.0
+scrim                     = "#5c1e00"
+scrim-alpha               = 0.25
+selected-background       = "#ffffff"
+selected-background-alpha = 0.92
+selected-text             = "#8f3000"
+selected-border           = "#ffffff"
+selected-border-alpha     = 1.0

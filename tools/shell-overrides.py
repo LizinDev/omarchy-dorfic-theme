@@ -34,7 +34,8 @@ GLASS_CARD = {
     'selected-border-alpha': 1.0,
 }
 OVERRIDES = {
-    'bar': {'size-horizontal': 34, 'background-alpha': 0.45},
+    # The Gloss Bar capsules carry the bar, so the strip itself is clear.
+    'bar': {'size-horizontal': 34, 'background-alpha': 0.0, 'text': '#ffffff'},
     'controls': {
         'selected-color': '{accent}', 'selected-fill-alpha': 0.28,
         'selected-border': '{accent}', 'selected-border-width': 1, 'selected-border-alpha': 0.9,
@@ -56,12 +57,10 @@ GLOSS_BAR = {
     'fill-bottom': '#ffb066',
     'fill-alpha': 0.62,
     'rim': '#ffd2a6',
-    'text': '#ffffff',
     'shadow': '#3a1000',
     'shadow-alpha': 0.25,
     'shine-alpha': 0.8,
     'glow-alpha': 0.4,
-    'font': 'Nimbus Sans',
     'inset': 4,
     'padding': 8,
 }

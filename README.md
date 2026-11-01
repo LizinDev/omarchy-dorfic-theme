@@ -17,8 +17,10 @@ blur, a white → gold → orange glossy frame, fat rounded corners and soft emb
 omarchy theme install https://github.com/LizinDev/omarchy-dorfic-theme.git
 ```
 
-For the glossy bar capsules, also install [Gloss Bar](https://github.com/LizinDev/omarchy-gloss-bar)
-(the stock bar plus capsules; it looks stock under any theme without a `[gloss-bar]` section).
+For the glossy bar capsules, also install [Gloss Bar](https://github.com/LizinDev/omarchy-gloss-bar),
+a zero-width bar widget that draws them under the stock bar (it draws nothing under themes
+without a `[gloss-bar]` section). The bar strip is clear in this theme, so use
+`omarchy bar transparent false` to keep the white bar text.
 
 ## Palette
 
@@ -41,7 +43,7 @@ orange. Passes the Omarchy palette validator in `--strict`.
 | `colors.toml` | the palette; Omarchy generates every other app's config from it |
 | `hyprland.lua` | rounding 18, white-gold-orange gradient border, ember shadow, blur on windows and shell layers |
 | `kitty.conf`, `alacritty.toml`, `ghostty.conf` | the stock templates rendered with this palette, plus 0.8 background opacity |
-| `shell.*.toml` | glass cards (menu, launcher, popups, notifications, lock), white selected pill, 34 px bar |
+| `shell.*.toml` | glass cards (menu, launcher, popups, notifications, lock), white selected pill, clear 34 px bar with white text |
 | `shell.gloss-bar.toml` | translucent orange capsules for the Gloss Bar plugin |
 | `backgrounds/` | six backgrounds drawn from code (bubbles, blades, hexcells, panels, ribbons, capsule) |
 

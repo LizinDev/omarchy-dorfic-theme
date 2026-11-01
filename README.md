@@ -46,6 +46,21 @@ orange. Passes the Omarchy palette validator in `--strict`.
 | `shell.*.toml` | glass cards (menu, launcher, popups, notifications, lock), white selected pill, clear 34 px bar with white text |
 | `shell.gloss-bar.toml` | translucent orange capsules for the Gloss Bar plugin |
 | `backgrounds/` | six backgrounds drawn from code (bubbles, blades, hexcells, panels, ribbons, capsule) |
+| `fastfetch.txt` | the fastfetch logo: glossy orbs and a glass bubble in truecolor half-blocks |
+
+## fastfetch logo
+
+Omarchy prints one global fastfetch logo, so a per-theme one needs a theme-set hook:
+
+```bash
+cp tools/fastfetch-hook ~/.config/omarchy/hooks/theme-set.d/50-fastfetch-logo
+omarchy theme refresh
+```
+
+When the applied theme ships a `fastfetch.txt`, the hook writes
+`~/.config/fastfetch/config.jsonc` (Omarchy's `/etc/fastfetch/config.jsonc` with the logo
+swapped for the art); under a theme without one it removes that file and the stock logo
+comes back. A fastfetch config you wrote yourself is left alone.
 
 ## Regenerating
 
@@ -54,6 +69,7 @@ python3 -I tools/wallpapers.py          # backgrounds (add names to render a sub
 python3 -I tools/terminals.py           # terminal configs, after a palette change
 omarchy theme set dorfic && python3 tools/shell-overrides.py && omarchy theme refresh
 python3 -I tools/preview.py             # preview.png
+python3 -I tools/fastfetch.py           # fastfetch.txt
 ```
 
 The section overrides restate every generated key as frozen hex, so re-run

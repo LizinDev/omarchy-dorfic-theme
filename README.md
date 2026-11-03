@@ -48,6 +48,9 @@ orange. Passes the Omarchy palette validator in `--strict`.
 | `icons.theme` | `Yaru` |
 | `backgrounds/` | six backgrounds drawn from code (bubbles, blades, hexcells, panels, ribbons, capsule) |
 | `fastfetch.txt` | the fastfetch logo: glossy orbs and a glass bubble in truecolor half-blocks |
+| `preview.png` | theme-switcher tile |
+| `unlock.png` | Plymouth boot splash and SDDM logo |
+| `preview-unlock.png` | the boot splash's preview, which lists the theme in `omarchy plymouth list` |
 
 ## fastfetch logo
 

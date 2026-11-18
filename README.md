@@ -17,6 +17,12 @@ blur, a white → gold → orange glossy frame, fat rounded corners and soft emb
 omarchy theme install https://github.com/LizinDev/omarchy-dorfic-theme.git
 ```
 
+The standard install applies the palette, gradient borders, translucent shell cards,
+and wallpapers. The rounded corners, ember shadows, custom blur, and 80% terminal
+opacity shown in the preview require the theme's local Hyprland and terminal
+configs. Omarchy generates its own versions of those files for themes installed
+from Git.
+
 For the glossy bar capsules, also install [Gloss Bar](https://github.com/LizinDev/omarchy-gloss-bar),
 a zero-width bar widget that draws them under the stock bar (it draws nothing under themes
 without a `[gloss-bar]` section). The bar strip is clear in this theme, so use
@@ -26,7 +32,7 @@ without a `[gloss-bar]` section). The bar strip is clear in this theme, so use
 
 | Role | Hex | |
 |---|---|---|
-| background | `#8f3000` | ember: terminals, menus, popups (80% / ~75% opaque) |
+| background | `#8f3000` | ember background for terminals, menus and popups |
 | foreground | `#fff3e6` | cream text, 7.42:1 on background |
 | accent | `#ffd23f` | sunlight gold: borders, selection, shortcuts |
 | selection | `#c4520c` | text selection |
@@ -41,8 +47,8 @@ orange. Passes the Omarchy palette validator in `--strict`.
 | File | |
 |---|---|
 | `colors.toml` | the palette; Omarchy generates every other app's config from it |
-| `hyprland.lua` | rounding 18, white-gold-orange gradient border, ember shadow, blur on windows and shell layers |
-| `kitty.conf`, `alacritty.toml`, `ghostty.conf` | the stock templates rendered with this palette, plus 0.8 background opacity |
+| `hyprland.lua` | local window settings for rounding 18, white-gold-orange gradient border, ember shadow, blur on windows and shell layers |
+| `kitty.conf`, `alacritty.toml`, `ghostty.conf` | local terminal configs rendered from the stock templates with 0.8 background opacity |
 | `shell.*.toml` | glass cards (menu, launcher, popups, notifications, lock), white selected pill, clear 34 px bar with white text |
 | `shell.gloss-bar.toml` | translucent orange capsules for the Gloss Bar plugin |
 | `icons.theme` | `Yaru` |
@@ -71,13 +77,14 @@ comes back. A fastfetch config you wrote yourself is left alone.
 ```bash
 python3 -I tools/wallpapers.py          # backgrounds (add names to render a subset, --scale 0.5 to draft)
 python3 -I tools/terminals.py           # terminal configs, after a palette change
-omarchy theme set dorfic && python3 tools/shell-overrides.py && omarchy theme refresh
+python3 tools/shell-overrides.py        # shell overrides, after a palette change
 python3 -I tools/preview.py             # preview.png
 python3 -I tools/fastfetch.py           # fastfetch.txt
 ```
 
 The section overrides restate every generated key as frozen hex, so re-run
-`shell-overrides.py` after any change to `colors.toml`.
+`shell-overrides.py` after any change to `colors.toml`. If DORFic is active, run
+`omarchy theme refresh` to apply the regenerated files.
 
 ## License
 

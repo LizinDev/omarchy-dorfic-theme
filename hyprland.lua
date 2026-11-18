@@ -72,3 +72,14 @@ hl.layer_rule({
   blur = true,
   ignore_alpha = 0.01,
 })
+
+-- Apply the terminal's HyprGlass material to the capsule layer only. The
+-- alpha contour follows each capsule instead of frosting the full bar strip.
+if hl.plugin.hyprglass then
+  hl.plugin.hyprglass.config({ layers = {
+    enabled = true,
+    namespaces = "omarchy-gloss-bar",
+    namespace_mask_modes = "omarchy-gloss-bar=contour",
+    namespace_mask_thresholds = "omarchy-gloss-bar=0.02",
+  } })
+end
